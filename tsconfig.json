@@ -5,6 +5,7 @@
       "@/*": ["./src/*"],
       "@/assets/*": ["./src/assets/*"],
       "@/pages/*": ["./src/pages/*"],
+      "@/config/*": ["./src/config/*"],
       "@/constants/*": ["./src/constants/*"],
       "@/libs/*": ["./src/libs/*"],
       "@/router/*": ["./src/router/*"],

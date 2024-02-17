@@ -7,6 +7,7 @@ module.exports = {
       "@/": path.resolve(__dirname, "src/"),
       "@/assets": path.resolve(__dirname, "src/assets"),
       "@/pages": path.resolve(__dirname, "src/pages"),
+      "@/config": path.resolve(__dirname, "src/config"),
       "@/libs": path.resolve(__dirname, "src/libs"),
       "@/constants": path.resolve(__dirname, "src/constants"),
       "@/router": path.resolve(__dirname, "src/router"),

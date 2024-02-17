@@ -19,7 +19,7 @@ export const useLogout = () => {
       Token.removeCookie(ROLE);
 
       rollingToast("로그아웃 되었습니다!", "info");
-      navigate("/");
+      navigate("/category/employment");
     }
   };
 

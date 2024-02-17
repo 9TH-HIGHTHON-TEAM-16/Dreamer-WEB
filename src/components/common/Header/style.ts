@@ -30,13 +30,18 @@ export const Content = styled.div`
   ul {
     padding-left: 80px;
     ${CssFlex({ alignItems: "center", columnGap: "50px" })}
+  }
+`;
 
-    li {
-      font-size: 15px;
-      color: #333;
-      cursor: pointer;
-      font-family: "Pretendard-SemiBold" !important;
-    }
+export const List = styled.li<{ isSelect: boolean }>`
+  font-size: 15px;
+  color: ${({ isSelect }) => (isSelect ? "#b77dff" : "#333;")};
+  cursor: pointer;
+  font-family: "Pretendard-SemiBold" !important;
+
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    color: #b77dff;
   }
 `;
 
@@ -83,11 +88,13 @@ export const Etc = styled.div`
 export const Search = styled.img`
   width: 30px;
   height: 30px;
+  cursor: pointer;
 `;
 
 export const Profile = styled.img`
   width: 35px;
   height: 35px;
+  cursor: pointer;
 
   border-radius: 100px;
   border: 1px solid #ddd;

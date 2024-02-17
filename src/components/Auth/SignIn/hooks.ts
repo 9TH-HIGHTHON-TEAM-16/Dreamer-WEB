@@ -40,7 +40,7 @@ export const useSignIn = () => {
         Token.setCookie(ACCESS_TOKEN_KEY, res.data.accessToken);
         Token.setCookie(REFRESH_TOKEN_KEY, res.data.refreshToken);
         Token.setCookie(ROLE, res.data.type);
-        navigate("/");
+        navigate("/category/employment");
       },
       onError: (e) => {
         rollingToast("로그인에 실패하였습니다", "error");

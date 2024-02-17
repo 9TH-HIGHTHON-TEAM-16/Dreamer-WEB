@@ -6,6 +6,7 @@ import { ACCESS_TOKEN_KEY } from "@/constants/Auth/constant";
 import { useLocation, useNavigate } from "react-router";
 import { useLogout } from "@/stories/hooks";
 import profile from "@/stories/assets/images/profile.webp";
+import { HEADER_ITEMS } from "./constant";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -19,15 +20,23 @@ const Header = () => {
     <S.Container>
       <S.Wrapper>
         <S.Content>
-          <S.Logo onClick={() => (window.location.href = "/")}>
+          <S.Logo
+            onClick={() => (window.location.href = "/category/employment")}
+          >
             <img src={logo} alt="로고" />
             <p>dreamer</p>
           </S.Logo>
           {!isSign && (
             <ul>
-              <li>채용</li>
-              <li>직업 추천</li>
-              <li>관련 제도</li>
+              {HEADER_ITEMS.map((item, idx) => (
+                <S.List
+                  key={idx}
+                  isSelect={item.link === pathname}
+                  onClick={() => navigate(item.link)}
+                >
+                  {item.name}
+                </S.List>
+              ))}
             </ul>
           )}
         </S.Content>

@@ -16,7 +16,7 @@ export const useTokenCheck = () => {
       Token.removeCookie(ACCESS_TOKEN_KEY);
       Token.removeCookie(REFRESH_TOKEN_KEY);
 
-      navigate("/");
+      navigate("/category/employment");
     }
   }, [accessToken, refreshToken]);
 };

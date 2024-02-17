@@ -2,10 +2,12 @@ import SignInPage from "@/pages/Auth/SignInPage";
 import SignUpPage from "@/pages/Auth/SignUpPage";
 import HomePage from "@/pages/HomePage";
 import NotFoundPage from "@/pages/NotFoundPage";
-import PsychologicalTestPage from "@/pages/PsychologicalTestPage";
-import CertificatePage from "@/pages/Recommand/CertificatePage";
-import JobPage from "@/pages/Recommand/JobPage";
-import PolicyPage from "@/pages/Recommand/PolicyPage";
+import CategoryCertificatePage from "@/pages/Category/CertificatePage";
+import CategoryEmploymentPage from "@/pages/Category/EmploymentPage";
+import CategoryPolicyPage from "@/pages/Category/PolicyPage";
+import RegistCertificatePage from "@/pages/Regist/CertificatePage";
+import RegistEmploymentPage from "@/pages/Regist/EmploymentPage";
+import RegistPolicyPage from "@/pages/Regist/PolicyPage";
 
 export const ROUTER_ITEMS = [
   { path: "/", element: HomePage },
@@ -13,11 +15,13 @@ export const ROUTER_ITEMS = [
   { path: "/signup", element: SignUpPage },
   { path: "/signin", element: SignInPage },
 
-  { path: "/recommand/certificate", element: CertificatePage },
-  { path: "/recommand/job", element: JobPage },
-  { path: "/recommand/policy", element: PolicyPage },
+  { path: "/category/certificate", element: CategoryCertificatePage },
+  { path: "/category/employment", element: CategoryEmploymentPage },
+  { path: "/category/policy", element: CategoryPolicyPage },
 
-  { path: "/psychological-test", element: PsychologicalTestPage },
+  { path: "/regist/certificate", element: RegistCertificatePage },
+  { path: "/regist/employment", element: RegistEmploymentPage },
+  { path: "/regist/policy", element: RegistPolicyPage },
 
   { path: "*", element: NotFoundPage },
 ] as const;

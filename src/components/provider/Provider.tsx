@@ -2,7 +2,7 @@ import { PropsWithChildren } from "@/stories/core";
 import GlobalStyle from "@/stories/core/design-token/GlobalStlye";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import styled from "styled-components";
 import Header from "../common/Header/Header";
@@ -11,18 +11,20 @@ import { RollingToastProvider } from "@stubee2/stubee2-rolling-toastify";
 
 const Provider = ({ children }: PropsWithChildren) => {
   const [queryClient] = useState(() => new QueryClient());
+  const { pathname } = useLocation();
+
+  const isRegist = pathname.includes("regist");
+
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <BrowserRouter>
-          <RollingToastProvider>
-            <GlobalStyle />
-            <Container>
-              <Header />
-              <Wrapper>{children}</Wrapper>
-            </Container>
-          </RollingToastProvider>
-        </BrowserRouter>
+        <RollingToastProvider>
+          <GlobalStyle />
+          <Container>
+            {!isRegist && <Header />}
+            <Wrapper isRegist={isRegist}>{children}</Wrapper>
+          </Container>
+        </RollingToastProvider>
       </RecoilRoot>
     </QueryClientProvider>
   );
@@ -41,8 +43,9 @@ const Container = styled.div`
   })}
 `;
 
-const Wrapper = styled.div`
-  width: 1060px;
+const Wrapper = styled.div<{ isRegist: boolean }>`
+  width: ${({ isRegist }) => (isRegist ? "100%" : "1060px")};
   height: 100%;
-  padding-top: 60px;
+  background-color: ${({ isRegist }) => isRegist && "#f4f4f4"};
+  padding-top: ${({ isRegist }) => !isRegist && "60px"};
 `;

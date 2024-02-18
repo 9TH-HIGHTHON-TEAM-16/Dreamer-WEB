@@ -30,7 +30,7 @@ const Container = styled.div`
 
   p {
     font-family: "Pretendard-Bold" !important;
-    font-size: 26px;
+    font-size: 22px;
   }
 
   button {

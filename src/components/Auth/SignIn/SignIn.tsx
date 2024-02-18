@@ -11,7 +11,7 @@ const SignIn = () => {
     <S.Container>
       <S.Box>
         <S.Title>
-          <S.MainTitle>드리머에 돌아오신 것을 환영해요.</S.MainTitle>
+          <S.MainTitle>드리머에 오신 것을 환영해요.</S.MainTitle>
           <S.SubTitle>꿈을 꾸는 사람들에게, 드리머</S.SubTitle>
         </S.Title>
 

@@ -40,7 +40,7 @@ interface Props {
 
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleContentChange: (e: React.FormEvent<HTMLSpanElement>) => void;
-  handleTagEnter: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleTagEnter: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const EmploymentForm = ({ ...hooks }: Props) => {
@@ -72,16 +72,15 @@ const EmploymentForm = ({ ...hooks }: Props) => {
         </S.Note>
 
         <S.Tag>
-          <div>
+          <form onSubmit={hooks.handleTagEnter}>
             <img src={tag} alt="태그" />
             <input
               name="tagList"
               value={hooks.tag}
               onChange={hooks.handleChange}
-              onKeyDown={hooks.handleTagEnter}
               placeholder="태그를 입력해주세요."
             />
-          </div>
+          </form>
 
           <ul>
             {hooks.data.tagList.map((item, idx) => (

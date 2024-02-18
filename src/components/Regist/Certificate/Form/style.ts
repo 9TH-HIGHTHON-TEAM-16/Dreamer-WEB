@@ -8,6 +8,9 @@ export const Container = styled.div`
   padding-top: 30px;
 
   overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   input {
     width: 100%;
     outline: none;

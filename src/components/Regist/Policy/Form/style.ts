@@ -8,6 +8,9 @@ export const Container = styled.div`
   padding-top: 30px;
 
   overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   input {
     width: 100%;
     outline: none;
@@ -73,7 +76,7 @@ export const ContentInput = styled.span<{ placeholder: string }>`
   outline: none;
   border: none;
 
-  font-size: 16px;
+  font-size: 17px;
   line-height: 18px;
   white-space: pre-wrap;
   word-break: break-word;

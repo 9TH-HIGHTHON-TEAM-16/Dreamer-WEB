@@ -34,7 +34,7 @@ export const useRegistEmployment = () => {
     careerYear: 0,
   });
 
-  const { location, role, careerYear } = detailData;
+  const { location, role } = detailData;
 
   const isBlank =
     content.trim() === "" ||
@@ -42,8 +42,7 @@ export const useRegistEmployment = () => {
     specialNote.trim() === "" ||
     tagList.length === 0 ||
     location.trim() === "" ||
-    role.trim() === "" ||
-    careerYear === 0;
+    role.trim() === "";
 
   const [tag, setTag] = useState("");
 
@@ -63,11 +62,10 @@ export const useRegistEmployment = () => {
     }
   };
 
-  const handleTagEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      setData((prev) => ({ ...prev, tagList: [...prev.tagList, tag] }));
-      setTag("");
-    }
+  const handleTagEnter = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setData((prev) => ({ ...prev, tagList: [...prev.tagList, tag] }));
+    setTag("");
   };
 
   const handleContentChange = (e: React.FormEvent<HTMLSpanElement>) => {

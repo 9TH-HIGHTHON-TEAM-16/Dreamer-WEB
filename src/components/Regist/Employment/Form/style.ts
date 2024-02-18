@@ -8,6 +8,9 @@ export const Container = styled.div`
   padding-top: 30px;
 
   overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   input {
     width: 100%;
     outline: none;
@@ -65,7 +68,7 @@ export const Tag = styled.div`
   width: 100%;
   margin-top: 5px;
 
-  div {
+  form {
     width: 100%;
     img {
       width: 27px;

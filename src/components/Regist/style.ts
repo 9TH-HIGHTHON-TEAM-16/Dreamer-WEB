@@ -15,6 +15,8 @@ export const RegistWrap = styled.div`
   border-left: 1px solid #ddd;
   background-color: #fff;
 
+  padding-bottom: 30px;
+
   ${CssFlex({ flexDirection: "column", alignItems: "center" })}
 `;
 
